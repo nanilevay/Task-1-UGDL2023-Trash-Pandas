@@ -15,6 +15,8 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private float fallGravityScale;
 
+    private Recorder recorder;
+
     float hAxis;
     private Rigidbody2D rb;
 
@@ -22,6 +24,10 @@ public class Movement : MonoBehaviour
 
     Vector3 currentVelocity;
 
+    private void Awake()
+    {
+        recorder = GetComponent<Recorder>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +49,12 @@ public class Movement : MonoBehaviour
         rb.velocity = currentVelocity;
 
         Move();
+    }
+
+    private void LateUpdate()
+    {
+        ReplayData data = new ReplayData(this.transform.position);
+        recorder.RecordReplayFrame(data);
     }
 
     private void Move()
