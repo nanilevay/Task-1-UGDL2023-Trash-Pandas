@@ -21,13 +21,13 @@ public class Recording
 
     public bool PlayNextFrame()
     {
-        if(replayObject == null)
+        if (replayObject == null)
         {
-            Debug.LogError("Tried to play next frame of recording, but replayobject was null");
+            Debug.LogError("Tried to play next frame of recording, but replayObject was null.");
         }
 
         bool hasMoreFrames = false;
-        if(replayQueue.Count != 0)
+        if (replayQueue.Count != 0)
         {
             ReplayData data = replayQueue.Dequeue();
             replayObject.SetDataForFrame(data);
@@ -38,7 +38,7 @@ public class Recording
 
     public void InstantiateReplayObject(GameObject replayObjectPrefab)
     {
-        if(replayQueue.Count !=0)
+        if (replayQueue.Count != 0)
         {
             ReplayData startingData = replayQueue.Peek();
             this.replayObject = Object.Instantiate(replayObjectPrefab, startingData.position, Quaternion.identity)
