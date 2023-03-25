@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Recording
 {
+
     public ReplayObject replayObject { get; private set; }
     private Queue<ReplayData> originalQueue;
     private Queue<ReplayData> replayQueue;
