@@ -5,20 +5,14 @@ using UnityEngine;
 public class ReSpawn : MonoBehaviour
 {
     [SerializeField] private Transform respawnPointObj;
-<<<<<<< HEAD
-=======
     [SerializeField] private float deathCounter;
     [SerializeField] private float maxDeathCounter;
 
->>>>>>> origin/Replay
     private Vector3 respawnPoint;
 
     private void Start()
     {
-<<<<<<< HEAD
-=======
         deathCounter = 0;
->>>>>>> origin/Replay
         respawnPoint = respawnPointObj.transform.position;
         GameEventsManager.instance.onGoalReached += OnGoalReached;
         GameEventsManager.instance.onRestartLevel += OnRestartLevel;
@@ -27,25 +21,20 @@ public class ReSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("r"))
+        if (Input.GetKeyDown("r") || deathCounter >= maxDeathCounter)
         {
-            this.transform.position = respawnPoint;
+            Restart();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-<<<<<<< HEAD
-        if(collision.tag == "FallDetector")
-=======
         if (collision.tag == "FallDetector" || collision.tag == "Hazard")
->>>>>>> origin/Replay
         {
             this.transform.position = respawnPoint;
+            deathCounter++;
         }
     }
-<<<<<<< HEAD
-=======
 
     private void Restart()
     {
@@ -65,5 +54,4 @@ public class ReSpawn : MonoBehaviour
     {
         //deactivate 'restart' UI
     }
->>>>>>> origin/Replay
 }
