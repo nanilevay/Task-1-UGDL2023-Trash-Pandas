@@ -11,7 +11,7 @@ public class PlayerReplayObject : ReplayObject
     {
         sr = GetComponentInChildren<SpriteRenderer>();
         deathBurstParticles = GetComponentInChildren<ParticleSystem>();
-        deathBurstParticles.Stop();
+       // deathBurstParticles.Stop();
     }
 
     public override void SetDataForFrame(ReplayData data)
