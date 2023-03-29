@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Timer.cs.meta
 guid: ccfe50fa40accb245866953f9d1fa841
+========
+guid: 64b62b600bf986243bd61d0a0229b275
+>>>>>>>> origin/Replay:Assets/Scripts/Goal.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
