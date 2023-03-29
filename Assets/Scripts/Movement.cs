@@ -57,6 +57,12 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown("r"))
+        {
+            OnReset();
+        }
+
         hAxis = Input.GetAxis("Horizontal");
 
         onGround = IsOnGround();
@@ -149,5 +155,14 @@ public class Movement : MonoBehaviour
         disableMovement = true;
         // hide player visual
         sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0);
+    }
+    private void OnReset()
+    {
+        // freeze movement
+        rb.gravityScale = fallGravityScale;
+        rb.velocity = currentVelocity;
+        disableMovement = false;
+        // hide player visual
+        sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 100);
     }
 }
