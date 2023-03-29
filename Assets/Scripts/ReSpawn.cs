@@ -14,15 +14,22 @@ public class ReSpawn : MonoBehaviour
     {
         deathCounter = 0;
         respawnPoint = respawnPointObj.transform.position;
-        GameEventsManager.instance.onGoalReached += OnGoalReached;
         GameEventsManager.instance.onRestartLevel += OnRestartLevel;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("r") || deathCounter >= maxDeathCounter)
+        if (Input.GetKeyDown("r"))
         {
+            GameEventsManager.instance.RestartLevel();
+
+            Restart();
+        }
+
+        if (deathCounter >= maxDeathCounter)
+        {
+            GameEventsManager.instance.GoalReached(); //replays
             Restart();
         }
     }
@@ -38,8 +45,6 @@ public class ReSpawn : MonoBehaviour
 
     private void Restart()
     {
-        GameEventsManager.instance.GoalReached(); //replays
-        GameEventsManager.instance.onGoalReached += OnGoalReached;
         GameEventsManager.instance.onRestartLevel += OnRestartLevel;
         this.transform.position = respawnPoint;
         deathCounter = 0;
