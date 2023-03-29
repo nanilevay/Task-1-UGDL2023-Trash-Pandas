@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Recorder : MonoBehaviour
 {
-
-    //Prefab to Instantiate
     [SerializeField] private GameObject replayObjectPrefab;
 
     public Queue<ReplayData> recordingQueue { get; private set; }

@@ -43,6 +43,15 @@ public class Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        // subscribe to events
+        GameEventsManager.instance.onGoalReached += OnGoalReached;
+    }
+
+    private void OnDestroy()
+    {
+        // unsubscribe from events
+        GameEventsManager.instance.onGoalReached -= OnGoalReached;
     }
 
     // Update is called once per frame
@@ -63,7 +72,9 @@ public class Movement : MonoBehaviour
 
     private void LateUpdate()
     {
-        ReplayData data = new PlayerReplayData(this.transform.position, onGround, rb.velocity, sr.color.a, facingRight, deathThisFrame);  //last three have to do with player death
+        // record replay data for this frame
+        ReplayData data = new PlayerReplayData(this.transform.position, onGround,
+            rb.velocity, sr.color.a, facingRight, deathThisFrame);
         recorder.RecordReplayFrame(data);
         deathThisFrame = false;
     }
@@ -129,5 +140,14 @@ public class Movement : MonoBehaviour
 
         // start a new recording for the replay on every respawn
         recorder.StartNewRecording();
+    }
+    private void OnGoalReached()
+    {
+        // freeze movement
+        rb.gravityScale = 0;
+        rb.velocity = Vector3.zero;
+        disableMovement = true;
+        // hide player visual
+        sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0);
     }
 }

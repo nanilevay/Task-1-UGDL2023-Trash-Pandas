@@ -5,7 +5,6 @@ using UnityEngine;
 public class ReSpawn : MonoBehaviour
 {
     [SerializeField] private Transform respawnPointObj;
-    //[SerializeField] private bool death;
     [SerializeField] private float deathCounter;
     [SerializeField] private float maxDeathCounter;
 
@@ -13,9 +12,10 @@ public class ReSpawn : MonoBehaviour
 
     private void Start()
     {
-        //death = false;
         deathCounter = 0;
         respawnPoint = respawnPointObj.transform.position;
+        GameEventsManager.instance.onGoalReached += OnGoalReached;
+        GameEventsManager.instance.onRestartLevel += OnRestartLevel;
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class ReSpawn : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "FallDetector" || collision.tag == "Hazard")
+        if (collision.tag == "FallDetector" || collision.tag == "Hazard")
         {
             this.transform.position = respawnPoint;
             deathCounter++;
@@ -38,7 +38,20 @@ public class ReSpawn : MonoBehaviour
 
     private void Restart()
     {
+        GameEventsManager.instance.GoalReached(); //replays
+        GameEventsManager.instance.onGoalReached += OnGoalReached;
+        GameEventsManager.instance.onRestartLevel += OnRestartLevel;
         this.transform.position = respawnPoint;
         deathCounter = 0;
+    }
+
+    private void OnGoalReached()
+    {
+        //activate 'restart' UI
+    }
+
+    private void OnRestartLevel()
+    {
+        //deactivate 'restart' UI
     }
 }

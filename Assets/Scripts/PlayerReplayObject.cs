@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class PlayerReplayObject : ReplayObject
 {
-    private Animator animator;
     private SpriteRenderer sr;
     private ParticleSystem deathBurstParticles;
 
     private void Awake()
     {
-        animator = GetComponentInChildren<Animator>();
         sr = GetComponentInChildren<SpriteRenderer>();
         deathBurstParticles = GetComponentInChildren<ParticleSystem>();
         deathBurstParticles.Stop();
@@ -22,10 +20,6 @@ public class PlayerReplayObject : ReplayObject
         PlayerReplayData playerData = (PlayerReplayData)data;
         // position
         this.transform.position = playerData.position;
-        // animator
-        animator.SetBool("isGrounded", playerData.isGrounded);
-        animator.SetFloat("movementX", playerData.movement.x);
-        animator.SetFloat("movementY", playerData.movement.y);
         // sprite alpha
         sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, playerData.spriteAlpha);
         // facing dir
