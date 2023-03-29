@@ -32,15 +32,6 @@ public class GameEventsManager : MonoBehaviour
         }
     }
 
-    public event Action<GameObject> onChangeCameraTarget;
-    public void ChangeCameraTarget(GameObject newTarget)
-    {
-        if (onChangeCameraTarget != null)
-        {
-            onChangeCameraTarget(newTarget);
-        }
-    }
-
     public event Action onPlayerRespawn;
     public void PlayerRespawn()
     {

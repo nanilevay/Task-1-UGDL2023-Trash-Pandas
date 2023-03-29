@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class Recorder : MonoBehaviour
 {
-    [Header("Prefab to Instantiate")]
     [SerializeField] private GameObject replayObjectPrefab;
-
-    [Header("Camera Targeting")]
-    [SerializeField] private bool newCameraTarget = false;
 
     public Queue<ReplayData> recordingQueue { get; private set; }
 
@@ -80,12 +76,6 @@ public class Recorder : MonoBehaviour
         foreach (Recording recording in recordings)
         {
             recording.InstantiateReplayObject(replayObjectPrefab);
-        }
-        // change the camera target to the replay object
-        if (newCameraTarget)
-        {
-            Recording lastRecording = recordings[recordings.Count - 1];
-            GameEventsManager.instance.ChangeCameraTarget(lastRecording.replayObject.gameObject);
         }
     }
 
