@@ -6,6 +6,7 @@ public class PlayerReplayObject : ReplayObject
 {
     private SpriteRenderer sr;
     private ParticleSystem deathBurstParticles;
+    public GameObject PlayerPrefab;
 
     private void Awake()
     {
@@ -16,8 +17,11 @@ public class PlayerReplayObject : ReplayObject
 
     public override void SetDataForFrame(ReplayData data)
     {
+        
+
         // typecast the data
         PlayerReplayData playerData = (PlayerReplayData)data;
+
         // position
         this.transform.position = playerData.position;
         // sprite alpha
