@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8519278046601473332
+--- !u!1 &1781968404635215190
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8519278046601473333}
+  - component: {fileID: 7705699765751874242}
   m_Layer: 0
   m_Name: WaypointDown
   m_TagString: Waypoint
@@ -16,22 +16,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8519278046601473333
+--- !u!4 &7705699765751874242
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8519278046601473332}
+  m_GameObject: {fileID: 1781968404635215190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.63, y: -4.985, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8519278047732935392}
+  m_Father: {fileID: 2597838905303164901}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8519278046647049683
+--- !u!1 &2985536151680789261
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39,11 +39,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8519278046647049680}
-  - component: {fileID: 8519278046647049676}
-  - component: {fileID: 8519278046647049674}
-  - component: {fileID: 8519278046647049677}
-  - component: {fileID: 8519278046647049675}
+  - component: {fileID: 2893615566874237200}
+  - component: {fileID: 3724364074906190175}
+  - component: {fileID: 3045331895606915512}
+  - component: {fileID: 3169092677860168870}
+  - component: {fileID: 5754677705252342864}
   m_Layer: 0
   m_Name: PopingSpikes
   m_TagString: Hazard
@@ -51,28 +51,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8519278046647049680
+--- !u!4 &2893615566874237200
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8519278046647049683}
+  m_GameObject: {fileID: 2985536151680789261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.63, y: -3.8406048, z: 0}
+  m_LocalPosition: {x: -5.63, y: -2.8926, z: 0}
   m_LocalScale: {x: 0.8059901, y: 0.44610792, z: 0.41664}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8519278047309029469}
+  m_Father: {fileID: 1044804840499756055}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8519278046647049676
+--- !u!212 &3724364074906190175
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8519278046647049683}
+  m_GameObject: {fileID: 2985536151680789261}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -118,13 +118,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8519278046647049674
+--- !u!61 &3045331895606915512
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8519278046647049683}
+  m_GameObject: {fileID: 2985536151680789261}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -144,13 +144,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!61 &8519278046647049677
+--- !u!61 &3169092677860168870
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8519278046647049683}
+  m_GameObject: {fileID: 2985536151680789261}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -170,13 +170,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.98, y: 0.95}
   m_EdgeRadius: 0
---- !u!114 &8519278046647049675
+--- !u!114 &5754677705252342864
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8519278046647049683}
+  m_GameObject: {fileID: 2985536151680789261}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 067a40bc51912964f8ff7b212d06de3f, type: 3}
@@ -186,9 +186,9 @@ MonoBehaviour:
   waitTimeUp: 1
   waitTimeDown: 1
   cycle: 0
-  waypointsUp: {fileID: 8519278047606242073}
-  waypointsDown: {fileID: 8519278046601473332}
---- !u!1 &8519278047309029468
+  waypointsUp: {fileID: 6337361732515076442}
+  waypointsDown: {fileID: 1781968404635215190}
+--- !u!1 &3116618316072860811
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8519278047309029469}
+  - component: {fileID: 1044804840499756055}
   m_Layer: 0
   m_Name: MovingTrap
   m_TagString: Untagged
@@ -204,24 +204,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8519278047309029469
+--- !u!4 &1044804840499756055
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8519278047309029468}
+  m_GameObject: {fileID: 3116618316072860811}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8519278046647049680}
-  - {fileID: 8519278047732935392}
+  - {fileID: 2893615566874237200}
+  - {fileID: 2597838905303164901}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8519278047606242073
+--- !u!1 &6337361732515076442
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8519278047606242070}
+  - component: {fileID: 8138205412373430400}
   m_Layer: 0
   m_Name: WaypointUp
   m_TagString: Waypoint
@@ -237,22 +237,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8519278047606242070
+--- !u!4 &8138205412373430400
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8519278047606242073}
+  m_GameObject: {fileID: 6337361732515076442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.63, y: -2.8926, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8519278047732935392}
+  m_Father: {fileID: 2597838905303164901}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8519278047732935395
+--- !u!1 &6804074795286450741
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8519278047732935392}
+  - component: {fileID: 2597838905303164901}
   m_Layer: 0
   m_Name: Waypoints
   m_TagString: Untagged
@@ -268,20 +268,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8519278047732935392
+--- !u!4 &2597838905303164901
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8519278047732935395}
+  m_GameObject: {fileID: 6804074795286450741}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8519278047606242070}
-  - {fileID: 8519278046601473333}
-  m_Father: {fileID: 8519278047309029469}
+  - {fileID: 8138205412373430400}
+  - {fileID: 7705699765751874242}
+  m_Father: {fileID: 1044804840499756055}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -7,6 +7,7 @@ public class ReSpawn : MonoBehaviour
     [SerializeField] private Transform respawnPointObj;
     [SerializeField] private float deathCounter;
     [SerializeField] private float maxDeathCounter;
+    [SerializeField] private GameObject PlayerPrefab;
 
     private Vector3 respawnPoint;
 
@@ -38,6 +39,7 @@ public class ReSpawn : MonoBehaviour
     {
         if (collision.tag == "FallDetector" || collision.tag == "Hazard")
         {
+            Instantiate(PlayerPrefab, this.transform.position, this.transform.rotation);
             this.transform.position = respawnPoint;
             deathCounter++;
         }
