@@ -9,23 +9,8 @@ using System.Collections;
 /// </summary>
 public class SettingsControl : MonoBehaviour
 {
-    // To change the speed at which codes appear in the main game loop
-    public Slider CodeSpeed;
-
-    // To change the speed at which the servo rotates by default
-    public Slider ServoSpeed;
-
-    // How many times the rotary encoder can be pressed to reset codes per game
-    public Slider ResetCounter;
-
     // To control the unity music volume for menus
     public Slider MusicVolume;
-
-    // Controlling whether the servo is on or off in a game, for debug purposes
-    public Toggle ServoOnOff;
-
-    // Digital prototype fullscreen option for easier viewing of instructions
-    public Toggle EndlessMode;
 
     // Digital prototype fullscreen option for easier viewing of instructions
     public Toggle FullScreen;
@@ -48,25 +33,16 @@ public class SettingsControl : MonoBehaviour
     /// </summary>
     void Awake()
     {
-        // Set the settings menu code speed slider to default/chosen value
-        CodeSpeed.value = GamePrefs.NewCodeSpeed;
-
-        // Set the settings menu servo speed slider to default/chosen value
-        ServoSpeed.value = GamePrefs.ServoSpeed;
-
-        // Set the settings menu reset counter slider to default/chosen value
-        ResetCounter.value = GamePrefs.ResetCounter;
+       
 
         // Set the settings menu music volume slider to default/chosen value
         MusicVolume.value = GamePrefs.MusicVol;
 
-        // Set the settings menu servo on/off toggle to default/chosen value
-        ServoOnOff.isOn = GamePrefs.ServoOn;
-
+      
         // Set the settings menu sounds on toggle to default/chosen value
         SoundsOnOff.isOn = GamePrefs.SoundOn;
 
-        EndlessMode.isOn = GamePrefs.EndlessMode;
+     
 
         // Cycle through all the audiosources in the scene
         foreach (AudioSource Sound in Sounds)
@@ -95,33 +71,7 @@ public class SettingsControl : MonoBehaviour
         UpdateSettings();
     }
 
-    /// <summary>
-    /// This method allows us to toggle the servo on and off depending on the
-    /// player's input in a given scene.
-    /// </summary>
-    public void ToggleOnOff()
-    {
-        // Check if the servo is currently on
-        if (ServoOnOff.isOn)
-        {
-            // Toggle servo off in current scene
-            ServoOnOff.isOn = false;
-
-            // Toggle servo off in game prefs script to save value
-            GamePrefs.ServoOn = false;
-        }
-
-        // Check if the servo is currently off
-        else
-        {
-            // Toggle servo on in current scene
-            GamePrefs.ServoOn = true;
-
-            // Toggle servo on in game prefs script to save value
-            ServoOnOff.isOn = true;
-        }
-    }
-
+   
     /// <summary>
     /// This method allows us to toggle the sounds on and off according to 
     /// player input
@@ -188,17 +138,7 @@ public class SettingsControl : MonoBehaviour
     /// </summary>
     public void UpdateSettings()
     {
-        // Change the static code speed to the current slider value
-        GamePrefs.NewCodeSpeed = (int)CodeSpeed.value;
-
-        // Change the static servo speed to the current slider value
-        GamePrefs.ServoSpeed = (int)ServoSpeed.value;
-
-        // Change the static reset counter to the current slider value
-        GamePrefs.ResetCounter = (int)ResetCounter.value;
-
-        // Change the static servo on/off to the current toggle value
-        GamePrefs.ServoOn = ServoOnOff.isOn;
+       
 
         // Change the static music volume to the current slider value
         GamePrefs.MusicVol = MusicVolume.value;
@@ -206,8 +146,6 @@ public class SettingsControl : MonoBehaviour
         // Change the static sound on/off to the current toggle value
         GamePrefs.SoundOn = SoundsOnOff.isOn;
 
-        // Change the static sound on/off to the current toggle value
-        GamePrefs.EndlessMode = EndlessMode.isOn;
 
 
     }
@@ -220,26 +158,12 @@ public class SettingsControl : MonoBehaviour
     /// </summary>
     public void LoadSettings()
     {
-        // Change the code speed slider value to the chosen preferences
-        CodeSpeed.value = GamePrefs.NewCodeSpeed;
-
-        // Change the servo speed slider value to the chosen preferences
-        ServoSpeed.value = GamePrefs.ServoSpeed;
-
-        // Change the reset counter slider value to the chosen preferences
-        ResetCounter.value = GamePrefs.ResetCounter;
-
+      
         // Change the volume slider value to the chosen preferences
         MusicVolume.value = GamePrefs.MusicVol;
 
-        // Change the servo on/off toggle value to the chosen preferences
-        ServoOnOff.isOn = GamePrefs.ServoOn;
-
         // Change the sound on/off toggle value to the chosen preferences
         SoundsOnOff.isOn = GamePrefs.SoundOn;
-
-
-        EndlessMode.isOn = GamePrefs.EndlessMode;
 
         // Go through all the audiosources in the scene
         foreach (AudioSource Sound in Sounds)

@@ -17,7 +17,7 @@ public class LevelLoader : MonoBehaviour
 
         t += Time.deltaTime;
 
-        if (t >= 10 )
+        if (t >= 5 )
         {
             LoadLevel(2);
 
