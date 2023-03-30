@@ -8,10 +8,6 @@ public class ReSpawn : MonoBehaviour
     [SerializeField] private float deathCounter;
     [SerializeField] private float maxDeathCounter;
 
-    public GameObject PlayerPrefab;
-
-    public Timer timer;
-
     private Vector3 respawnPoint;
 
     private void Start()
@@ -24,7 +20,7 @@ public class ReSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("r") && !timer.timerActive)
+        if (Input.GetKeyDown("r"))
         {
             GameEventsManager.instance.RestartLevel();
 
@@ -42,17 +38,13 @@ public class ReSpawn : MonoBehaviour
     {
         if (collision.tag == "FallDetector" || collision.tag == "Hazard")
         {
-            Instantiate(PlayerPrefab, this.transform.position, this.transform.rotation);
             this.transform.position = respawnPoint;
             deathCounter++;
-            
         }
     }
 
     private void Restart()
     {
-       
-        timer.timerActive = true;
         GameEventsManager.instance.onRestartLevel += OnRestartLevel;
         this.transform.position = respawnPoint;
         deathCounter = 0;

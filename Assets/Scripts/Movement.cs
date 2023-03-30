@@ -129,24 +129,24 @@ public class Movement : MonoBehaviour
         return (collider != null);
     }
 
-    private IEnumerator HandleDeath()
-    {
-        // freeze player movemet
-        rb.gravityScale = 0;
-        disableMovement = true;
-        rb.velocity = Vector3.zero;
-        // prevent other collisions
-        coll.enabled = false;
-        // hide the player visual
-        sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0);
-        // keep track of when the player died for replay
-        deathThisFrame = true;
+    //private IEnumerator HandleDeath()
+    //{
+    //    // freeze player movemet
+    //    rb.gravityScale = 0;
+    //    disableMovement = true;
+    //    rb.velocity = Vector3.zero;
+    //    // prevent other collisions
+    //    coll.enabled = false;
+    //    // hide the player visual
+    //    sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0);
+    //    // keep track of when the player died for replay
+    //    deathThisFrame = true;
 
-        yield return new WaitForSeconds(0.4f);
+    //    yield return new WaitForSeconds(0.4f);
 
-        // start a new recording for the replay on every respawn
-        recorder.StartNewRecording();
-    }
+    //    // start a new recording for the replay on every respawn
+    //    recorder.StartNewRecording();
+    //}
     private void OnGoalReached()
     {
         // freeze movement
