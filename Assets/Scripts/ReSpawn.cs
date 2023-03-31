@@ -35,7 +35,9 @@ public class ReSpawn : MonoBehaviour
         if (deathCounter >= maxDeathCounter)
         {
             RespawnUI.active = true;
+            FindObjectOfType<SoundManager>().Play("Rewind");
             this.GetComponent<Movement>().enabled = false;
+           
             GameEventsManager.instance.GoalReached(); //replays
             Restart();
         }
@@ -45,6 +47,7 @@ public class ReSpawn : MonoBehaviour
     {
         if (collision.tag == "FallDetector" || collision.tag == "Hazard")
         {
+            FindObjectOfType<SoundManager>().Play("Death");
             Instantiate(PlayerPrefab, this.transform.position, this.transform.rotation);
             this.transform.position = respawnPoint;
             deathCounter++;

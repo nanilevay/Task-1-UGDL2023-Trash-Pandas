@@ -29,10 +29,12 @@ public class EnvironmentalSpikes : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTimeDown);
         yield return MoveTo(waypointsDown.transform);
-        FindObjectOfType<SoundManager>().Play("u");
+        if(this.tag == "Hazard")
+            FindObjectOfType<SoundManager>().Play("Spikes");
         yield return new WaitForSeconds(waitTimeUp);
         yield return MoveTo(waypointsUp.transform);
-        FindObjectOfType<SoundManager>().Play("u");
+        if (this.tag == "Hazard")
+            FindObjectOfType<SoundManager>().Play("Spikes");
         cycle = true;
     }
     IEnumerator MoveTo(Transform destination)

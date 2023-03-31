@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afc687b0aab71484a97f1aab6c25f25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSpeed: 7
+  horizontalSpeed: 5
   jumpSpeed: 10
   groundCheck: {fileID: 6000733884282249945}
   groundCheckRadius: 0.2
@@ -178,6 +178,7 @@ MonoBehaviour:
   deathCounter: 0
   maxDeathCounter: 3
   PlayerPrefab: {fileID: 6435934854975009290, guid: 022118900c3d4ed4dbd42f3fdc288026, type: 3}
+  RespawnUI: {fileID: 0}
 --- !u!114 &6000733883621739339
 MonoBehaviour:
   m_ObjectHideFlags: 0

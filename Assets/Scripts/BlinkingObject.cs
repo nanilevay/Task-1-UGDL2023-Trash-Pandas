@@ -21,6 +21,7 @@ public class BlinkingObject : MonoBehaviour
     {
         if (ObjectToBlink.activeSelf && visible)
         {
+            FindObjectOfType<SoundManager>().Play("PlatformPoof");
             ObjectToBlink.SetActive(false);
             yield return new WaitForSeconds(InactiveDuration);
             visible = false;
@@ -28,6 +29,7 @@ public class BlinkingObject : MonoBehaviour
 
         else if (!ObjectToBlink.activeSelf && !visible)
         {
+            FindObjectOfType<SoundManager>().Play("PlatformPoof");
             ObjectToBlink.SetActive(true);
             yield return new WaitForSeconds(ActiveDuration);
             visible = true;

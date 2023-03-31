@@ -116,7 +116,7 @@ public class Movement : MonoBehaviour
         {
             if (onGround)
             {
-                FindObjectOfType<SoundManager>().Play("u");
+                FindObjectOfType<SoundManager>().Play("Jump");
                 rb.gravityScale = 1.0f;
                 currentVelocity.y = jumpSpeed;
                 jumpTime = Time.time;
@@ -163,7 +163,7 @@ public class Movement : MonoBehaviour
     //}
     private void OnGoalReached()
     {
-        FindObjectOfType<SoundManager>().Play("u");
+        FindObjectOfType<SoundManager>().Play("Win");
         // freeze movement
         rb.gravityScale = 0;
         rb.velocity = Vector3.zero;

@@ -34,6 +34,7 @@ public class BlinkOnCollission : MonoBehaviour
 
     IEnumerator HidePlatform()
     {
+        FindObjectOfType<SoundManager>().Play("PlatformPoof");
         yield return new WaitForSeconds(TimeToShowPlatform);
         Platform.SetActive(false);
     }

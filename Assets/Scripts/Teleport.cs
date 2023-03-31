@@ -17,6 +17,7 @@ public class Teleport : MonoBehaviour
         switch (collision.tag)
         {
             case "Teleporter":
+                FindObjectOfType<SoundManager>().Play("Portal");
                 transform.position = collision.transform.GetChild(0).position;
                 break;
             default:
