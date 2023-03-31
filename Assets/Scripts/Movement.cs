@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Movement : MonoBehaviour
 {
+    private Animator anim;
+
     [SerializeField] private float horizontalSpeed;
     [SerializeField] private float jumpSpeed;
     
@@ -43,6 +46,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = gameObject.GetComponent<Animator>();
 
         // subscribe to events
         GameEventsManager.instance.onGoalReached += OnGoalReached;
@@ -74,6 +78,9 @@ public class Movement : MonoBehaviour
         rb.velocity = currentVelocity;
 
         Move();
+
+
+        anim.SetBool("Jumping", !onGround);
     }
 
     private void LateUpdate()
@@ -90,11 +97,17 @@ public class Movement : MonoBehaviour
         if (currentVelocity.x > 0)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
+
+            anim.SetBool("Walking", true);
         }
         else if (currentVelocity.x < 0)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
+
+            anim.SetBool("Walking", true);
         }
+        else
+            anim.SetBool("Walking", false);
     }
 
     private void Jump()
