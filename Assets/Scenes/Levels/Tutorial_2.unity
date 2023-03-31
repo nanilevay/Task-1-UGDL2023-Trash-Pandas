@@ -8180,6 +8180,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Normalspikes
       objectReference: {fileID: 0}
+    - target: {fileID: 6374945277317014461, guid: 39dc7c4816dbfb7448b873ee78ad7879, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6430766146573144480, guid: 39dc7c4816dbfb7448b873ee78ad7879, type: 3}
       propertyPath: m_RootOrder
       value: -1
