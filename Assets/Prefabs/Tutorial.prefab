@@ -108,6 +108,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectToBlink: {fileID: 1065502033827560599}
+  ActiveDuration: 0.3
+  InactiveDuration: 0.1
+  visible: 1
 --- !u!1 &1065502033147261353
 GameObject:
   m_ObjectHideFlags: 0
