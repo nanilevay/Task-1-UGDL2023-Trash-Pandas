@@ -3384,7 +3384,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: sfdhdhfhhg
+  m_text: "It was only supposed to be a simple seance... You weren't mean to switch
+    souls like this! Now you're stuck with 3 tries before you're stuck in here forever,
+    but in order to do so, you must sacrifice some of them.\n\nGood luck! Use them
+    wisely.\n\n<b>HOW TO PLAY:</b>\n\nUse the A and D or arrow keys to move left
+    to right. \n\nJump with the SPACE key.\n\nThere are 4 levels, you must reach
+    the <b>GOAL</b> in each of them to progress onto the next one. Once you have
+    died 3 times without reaching the goal you will see a replay. \n\nDeveloped by
+    Team Trash Pandas for the UGDL23. Thank you for playing!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3411,15 +3418,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14.89
-  m_fontSizeBase: 14.89
+  m_fontSize: 15.78
+  m_fontSizeBase: 15.78
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -3447,7 +3454,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 107.34241, y: 96.35748, z: 194.65811, w: 72.051834}
+  m_margin: {x: 134.048, y: 133.5545, z: 222.31754, w: 96.84984}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6114,7 +6121,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "How to play\r"
+  m_text: About
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cffac3abb8c72834d93b67d817e7c9f5, type: 2}
   m_sharedMaterial: {fileID: -7068561907765298864, guid: cffac3abb8c72834d93b67d817e7c9f5, type: 2}

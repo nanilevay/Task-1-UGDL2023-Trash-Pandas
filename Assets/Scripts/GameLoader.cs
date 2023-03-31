@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameLoader : MonoBehaviour
 {
@@ -30,8 +31,8 @@ public class GameLoader : MonoBehaviour
     IEnumerator FadeIn()
     {
         anim.SetBool("start", true);
-        yield return new WaitForSeconds(1);
-        FadeObj.SetActive(false);
+        //yield return new WaitForSeconds(1);
+        //FadeObj.SetActive(false);
         GamePrefs.GameStart = false;
 
         yield break;
@@ -44,9 +45,9 @@ public class GameLoader : MonoBehaviour
 
     IEnumerator FadeOut()
     {
-        FadeOutObj.SetActive(true);
-        FadeOutAnim.SetBool("start", true);
-        yield return new WaitForSeconds(2);
+        //FadeOutObj.SetActive(true);
+        //FadeOutAnim.SetBool("start", true);
+        //yield return new WaitForSeconds(2);
         LoadGame();
         yield break;
     }
@@ -67,7 +68,7 @@ public class GameLoader : MonoBehaviour
 
     public void LoadGame()
     {
-        Application.LoadLevel(1);
+        SceneManager.LoadScene(1);
     }
 
     public void ToggleSettings()
