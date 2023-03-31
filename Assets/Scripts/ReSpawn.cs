@@ -9,6 +9,8 @@ public class ReSpawn : MonoBehaviour
     [SerializeField] private float deathCounter;
     [SerializeField] private float maxDeathCounter;
     [SerializeField] private GameObject PlayerPrefab;
+    [SerializeField] private GameObject RespawnUI;
+
 
     private Vector3 respawnPoint;
 
@@ -32,6 +34,7 @@ public class ReSpawn : MonoBehaviour
 
         if (deathCounter >= maxDeathCounter)
         {
+            RespawnUI.active = true;
             this.GetComponent<Movement>().enabled = false;
             GameEventsManager.instance.GoalReached(); //replays
             Restart();
@@ -63,5 +66,10 @@ public class ReSpawn : MonoBehaviour
     private void OnRestartLevel()
     {
         //deactivate 'restart' UI
+    }
+
+    public void RestartScene()
+    {
+        Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
     }
 }
