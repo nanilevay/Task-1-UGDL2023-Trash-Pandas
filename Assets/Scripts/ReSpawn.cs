@@ -32,6 +32,7 @@ public class ReSpawn : MonoBehaviour
 
         if (deathCounter >= maxDeathCounter)
         {
+            this.GetComponent<Movement>().enabled = false;
             GameEventsManager.instance.GoalReached(); //replays
             Restart();
         }
