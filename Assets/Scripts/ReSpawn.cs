@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ReSpawn : MonoBehaviour
 {
@@ -23,9 +24,10 @@ public class ReSpawn : MonoBehaviour
     {
         if (Input.GetKeyDown("r"))
         {
-            GameEventsManager.instance.RestartLevel();
+            //GameEventsManager.instance.RestartLevel();
 
-            Restart();
+            //Restart();
+            Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
         }
 
         if (deathCounter >= maxDeathCounter)
